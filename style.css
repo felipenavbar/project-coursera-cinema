@@ -4,6 +4,20 @@ body {
     padding: 0;
     background-color: #1a1a1a;
     color: #ffffff;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 header {
@@ -42,6 +56,7 @@ footer p {
 
 .screen {
     width: 100%;
+    max-width: 100%;
     height: 150px;
     margin: 20px 0;
     clip-path: polygon(5% 0%, 95% 0%, 90% 100%, 10% 100%);
@@ -224,4 +239,221 @@ footer p {
 
 .seat.occupied::before {
     background-color: #333;
+}
+
+/* Media Queries para Responsive Design */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .seats {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .seat {
+        width: 35px;
+        height: 44px;
+    }
+    
+    .seat::before {
+        height: 18px;
+    }
+    
+    .screen {
+        height: 120px;
+        font-size: 2rem;
+        letter-spacing: 5px;
+    }
+    
+    .movie-list {
+        gap: 20px;
+    }
+    
+    .movie-card {
+        width: 180px;
+        padding: 15px;
+    }
+}
+
+/* Tablets pequeñas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    .seats {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .seat-block {
+        max-width: 100%;
+        gap: 10px;
+    }
+    
+    .block-4x10 {
+        grid-template-columns: repeat(10, auto);
+    }
+    
+    .block-4x4 {
+        grid-template-columns: repeat(4, auto);
+    }
+    
+    .seat {
+        width: 32px;
+        height: 40px;
+    }
+    
+    .seat::before {
+        height: 16px;
+    }
+    
+    .screen {
+        height: 100px;
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+    
+    .movie-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .movie-card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .selection-info {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
+
+/* Móviles grandes */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        padding: 20px 10px;
+    }
+    
+    header {
+        padding: 20px 10px;
+    }
+    
+    .seats {
+        gap: 30px;
+        margin: 20px 0;
+    }
+    
+    .seat-block {
+        gap: 8px;
+        padding: 0 10px;
+    }
+    
+    /* Ajustar columnas en móviles para que quepan */
+    .block-4x10 {
+        grid-template-columns: repeat(5, auto);
+    }
+    
+    .block-4x4 {
+        grid-template-columns: repeat(4, auto);
+    }
+    
+    .seat {
+        width: 28px;
+        height: 35px;
+        border-radius: 6px 6px 3px 3px;
+    }
+    
+    .seat::before {
+        height: 14px;
+        border-radius: 6px 6px 2px 2px;
+    }
+    
+    .screen {
+        height: 80px;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        margin: 15px 0;
+    }
+    
+    .movie-selection h2 {
+        font-size: 1.5rem;
+    }
+    
+    .movie-list {
+        gap: 15px;
+    }
+    
+    .movie-card {
+        width: 100%;
+        max-width: 280px;
+        padding: 15px;
+    }
+    
+    .movie-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .selection-info {
+        margin: 15px 5px;
+        padding: 12px;
+    }
+    
+    .selection-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .seat-label {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+        top: -25px;
+    }
+    
+    .seat-tooltip {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    footer {
+        padding: 15px 10px;
+    }
+    
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    .seat {
+        width: 24px;
+        height: 30px;
+    }
+    
+    .seat::before {
+        height: 12px;
+    }
+    
+    .seat-block {
+        gap: 6px;
+    }
+    
+    .block-4x10 {
+        grid-template-columns: repeat(5, auto);
+    }
+    
+    .screen {
+        height: 60px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
 }
